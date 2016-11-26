@@ -1,0 +1,188 @@
+<%= render 'shared/header_transparent' %>
+
+<!-- Content -->
+<div class="content clearfix">
+
+	<%= render 'slider-pictures' %>
+
+	<!-- Portfolio Grid -->
+	<div class="section-block grid-filter-menu pt-110 right left-on-mobile">
+		<div class="row no-padding">
+			<div class="column width-6 left">
+				<h3 class="mb-mobile-50">Lo más reciente</h3>
+			</div>
+			<div class="column width-6">
+				<ul>
+					<li><a class="active" href="#" data-filter="*">Todo</a></li>
+					<% @categories.each do |projected_category| %>
+						<li>
+							<a href="#" data-filter=".<%= projected_category.category.title.parameterize %>">
+								<%= projected_category.category.title %>
+							</a>
+						</li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<%= render partial: 'pictures/list', locals: { pictures: @pictures } %>
+	<!-- Portfolio Grid End -->
+
+	<!-- Hero Section 5 -->
+	<section class="section-block hero-5 hero-5-1 clear-height right show-media-column-on-mobile bkg-charcoal color-white">
+		<div class="media-column width-6"></div>
+		<div class="row">
+			<div class="column width-5">
+				<div class="hero-content split-hero-content">
+					<div class="hero-content-inner left horizon" data-animate-in="preset:slideInRightShort;duration:1000ms;" data-threshold="0.5">
+						<h3 class="mb-50">Acerca de</h3>
+						<p class="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+						<p class="mb-50">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia volupta.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Hero Section 5 End -->
+
+	<!-- Client Section Custom -->
+	<div class="section-block clients-1 replicable-content bkg-grey-ultralight">
+		<div class="row flex">
+			<div class="column width-3">
+				<h3 class="mb-50">Recognition</h3>
+			</div>
+			<div class="column width-9">
+				<div class="row content-grid-3 flex">
+					<div class="grid-item">
+						<h5 class="client-name">Cannes Gold Lion</h5>
+						<span class="client-description font-alt-1">2015</span>
+					</div>
+					<div class="grid-item">
+						<h5 class="client-name">Parons Art Award</h5>
+						<span class="client-description font-alt-1">2015</span>
+					</div>
+					<div class="grid-item">
+						<h5 class="client-name">Fashion TV Award</h5>
+						<span class="client-description font-alt-1">2015</span>
+					</div>
+					<div class="grid-item">
+						<h5 class="client-name">Nat Geo Photo</h5>
+						<span class="client-description font-alt-1">2014</span>
+					</div>
+					<div class="grid-item">
+						<h5 class="client-name">MoMa Photo Awards</h5>
+						<span class="client-description font-alt-1">2014</span>
+					</div>
+					<div class="grid-item">
+						<h5 class="client-name">GLAAD Media Awards</h5>
+						<span class="client-description font-alt-1">2014</span>
+					</div>
+					<div class="grid-item">
+						<h5 class="client-name">GQ Fashion Award</h5>
+						<span class="client-description font-alt-1">2013</span>
+					</div>
+					<div class="grid-item">
+						<h5 class="client-name">VH-1 Photo of The Year</h5>
+						<span class="client-description font-alt-1">2013</span>
+					</div>
+					<div class="grid-item">
+						<h5 class="client-name">VH-1 Achivement Award</h5>
+						<span class="client-description font-alt-1">2012</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Client Section Custom End -->
+
+	<!-- Sign Up Section 1
+	<section class="section-block signup-1">
+		<div class="row">
+			<div class="column width-6 offset-3 center">
+				<h3 class="mb-30">Sign up and get the latest news from Sartre:</h3>
+				<div class="signup-form-container">
+					<form class="signup-form" action="php/subscribe.php" method="post" novalidate>
+						<div class="row">
+							<div class="column width-9">
+								<div class="field-wrapper">
+									<input type="email" name="email" class="form-email form-element no-padding-left no-padding-right center-on-mobile" placeholder="Email address*" tabindex="2" required>
+								</div>
+							</div>
+							<div class="column width-3 center">
+								<input type="submit" value="Signup" class="form-submit button bkg-charcoal bkg-hover-charcoal color-white color-hover-white">
+							</div>
+						</div>
+						<input type="text" name="honeypot" class="form-honeypot form-element">
+					</form>
+					<div class="form-response show"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	Sign Up Section 1 End -->
+
+	<!-- Call to Action Section
+	<div class="section-block replicable-content pt-60 pb-30 call-to-action-2 call-to-action-2-1 bkg-grey-ultralight background-cover">
+		<div class="row">
+			<div class="column width-6 offset-3 center">
+				<p class="text-uppercase"><a data-content="inline" data-toolbar="" data-networks="twitter;pinterest" data-modal-mode data-modal-width="600" data-lightbox-animation="fade" href="#signup-lightbox" class="lightbox-link color-white color-hover-theme" href="#">Join Our Newsletter</a></p>
+			</div>
+		</div>
+	</div>
+	Call to Action Section End -->
+
+	<!-- Testimonial Section 2 -->
+	<div class="section-block bkg-grey-ultralight testimonial-2 testimonial-2-1 color-white">
+		<div class="row">
+			<div class="column width-12">
+				<div class="row">
+					<div class="column width-3">
+						<h6 class="no-margin-bottom weight-bold">GQ Magazine</h6>
+						<p>November Edition 2015</p>
+					</div>
+					<div class="column width-9">
+						<div class="row">
+							<div class="column width-10">
+								<blockquote class="large left">
+									<p>Incredibly talented. Goes above and beyond on every shoot. We've worked with Sartre for more than 10 years and his work never ceases to amaze.</p>
+									<cite>John Adams - Editor in Chief</cite>
+								</blockquote>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Testimonial Section 2 End -->
+
+	<!-- Signup Modal
+	<div id="signup-lightbox" class="signup-1 pt-70 pb-50 hide">
+		<div class="row">
+			<div class="column width-12 center">
+				<h2 class="mb-30">Join Our Newsletter:</h2>
+				<div class="signup-form-container">
+					<form class="signup-form" action="php/subscribe.php" method="post" novalidate>
+						<div class="row">
+							<div class="column width-9">
+								<div class="field-wrapper">
+									<input type="email" name="email" class="form-email form-element no-padding-left no-padding-right" placeholder="Email address*" tabindex="2" required>
+								</div>
+							</div>
+							<div class="column width-3 center">
+								<input type="submit" value="Signup" class="form-submit button bkg-charcoal bkg-hover-charcoal color-white color-hover-white">
+							</div>
+						</div>
+						<input type="text" name="honeypot" class="form-honeypot form-element">
+					</form>
+					<div class="form-response show"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	Signup Modal End -->
+
+</div>
+<!-- Content End -->
+
+		

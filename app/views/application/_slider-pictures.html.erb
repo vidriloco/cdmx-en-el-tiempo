@@ -1,0 +1,34 @@
+<!-- Fullscreen Slider Section -->
+<section class="section-block featured-media window-height tm-slider-parallax-container">
+	<div class="tm-slider-container full-width-slider" data-featured-slider data-parallax data-parallax-fade-out data-animation="scaleOut" data-speed="1200" data-scale-under="960">
+		<ul class="tms-slides">
+			<% @selected_pictures.each do |picture| %>
+				<li class="tms-slide" data-image data-force-fit data-overlay-bkg-color="#000000" data-overlay-bkg-opacity="0.2">
+					<div class="tms-content">
+						<div class="tms-content-inner center v-align-middle">
+							<div class="row">
+								<div class="column width-6 offset-3 color-white">
+									<h1 class="tms-caption lspacing-large weight-bold text-uppercase no-margin-bottom"
+										data-animate-in="preset:slideInDownShort;duration:600ms;delay:500ms;"
+										data-no-scale
+									>
+										La Ciudad de México en el Tiempo
+									</h1>
+									<div class="clear"></div>
+									<p class="tms-caption weight-light text-uppercase lspacing-medium hide-on-mobile"
+										data-animate-in="preset:slideInDownShort;duration:600ms;delay:300ms;"
+										data-no-scale
+									>
+										Cronistas de la ciudad
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<img data-src="<%= picture %>" data-retina src="<%= picture %>" alt=""/>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+</section>
+<!-- Fullscreen Slider Section End -->

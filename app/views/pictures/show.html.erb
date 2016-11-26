@@ -1,0 +1,88 @@
+<%= render 'shared/header_opaque' %>
+
+<!-- Content -->
+<div class="content clearfix">
+	<!-- About Intro -->
+	<div class="section-block clearfix no-padding-bottom">
+		<div class="row">
+			
+			<div class="column width-10 offset-1 content-inner blog-regular">
+				<div class="post-info boxed">
+					<div class="row">
+						<div class="column width-6">
+							<div class="actions">
+								<%= link_to "<span class='icon-left-open-mini'></span> Atrás".html_safe, :back %>
+							</div>
+						</div>
+						<div class="column width-6">
+							<div class="actions pull-right">
+								<span>COMPARTIR EN: </span> <%= link_to "Twitter".html_safe, :back %>&nbsp;&nbsp;
+								<%= link_to "Facebook".html_safe, :back, class: 'main-action' %>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<article class="post no-margin-bottom">
+					<div class="post-content center">
+						<h2 class="post-title"><%= @picture.title %></h2>
+						<div class="post-info actions">
+							<span>Foto de <b><%= @picture.year %></b></span>/
+							<span class="post-date">Posteada por <a href="#">Pedro</a></span>/
+							<span class="post-autor">Hace <%= distance_of_time_in_words_to_now(@picture.created_at) %></span>
+						</div>
+					</div>
+					<br/>
+					<div class="post-content center">
+						<div class="row">
+							<div class="column width-10 offset-1">
+								<p><%= @picture.description.html_safe %></p>
+							</div>
+						</div>
+					</div>
+					<div class="post-media center">
+						<div class="thumbnail">
+							<a class="overlay-link lightbox-link" href="<%= @picture.url %>">
+								<%= image_tag(@picture.url) %>
+							</a>
+						</div>
+					</div>
+				</article>
+				
+				<div class="accordion style-2" data-toggle-icon="" data-toggle-multiple="">
+					<ul>
+						<li class="">
+							<a href="#accordion-2-panel-1"><span class="icon-plus"></span>Ver Mapa</a>
+							<div id="accordion-2-panel-1" class="" style="height: 0px;">
+								<div class="accordion-content">
+									<div class="map-container" data-coordinates="[<%= @picture.location %>]" data-icon='"/assets/map-marker.png"' data-zoom-level="15" data-style="color">
+										<div class="map-canvas" id="map-canvas-1"></div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="post-info boxed">
+					<div class="row">
+						<div class="column width-12">
+							<div class="actions">
+								<b>TAGS: </b><%= tags_for(@picture) %>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		
+		</div>
+	</div>
+	<hr class="post-finished-indicator" />
+	<!-- About Intro End -->
+	<%= render partial: 'shared/related_picture', locals: { title: "Este lugar en otros tiempos" } %>
+	<%= render partial: 'shared/related_picture', locals: { title: "Lugares cercanos" } %>
+	
+</div>
+
+

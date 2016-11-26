@@ -1,0 +1,16 @@
+<div class="grid-item <%= picture.disposition_on_landing_page %> <%= picture.parameterized_category_list %>">
+	<div class="thumbnail img-scale-in" data-hover-easing="easeInOut" data-hover-speed="500" data-hover-bkg-color="#000000" data-hover-bkg-opacity="0.4">
+		<a href="<%= picture_path(picture.id, picture.title.parameterize) %>">
+			<%= image_tag(picture.url) %>
+			<span class="overlay-info v-align-bottom left">
+				<span>
+					<span>
+						<span class="text-line bkg-white mb-10"></span>
+						<span class="project-title"><%= picture.title %></span>
+						<span class="project-description"><%= picture.year %></span>
+					</span>
+				</span>
+			</span>
+		</a>
+	</div>
+</div>

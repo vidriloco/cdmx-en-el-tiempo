@@ -1,0 +1,32 @@
+<%= render 'shared/header_opaque' %>
+
+<div class="content clearfix">
+	<div class="section-block clearfix no-padding-bottom">
+		<div class="row">
+			
+			<div class="column width-12 content-inner blog-regular">
+				<div class="post-info boxed">
+					<div class="row">
+						<div class="column width-6">
+							<div class="actions">
+								<%= link_to "<span class='icon-left-open-mini'></span> Atrás".html_safe, :back %>
+							</div>
+						</div>
+						<div class="column width-6">
+							<div class="actions pull-right">
+								<span>COMPARTIR EN: </span> <%= link_to "Twitter".html_safe, :back %>&nbsp;&nbsp;
+								<%= link_to "Facebook".html_safe, :back, class: 'main-action' %>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="center">
+					<h2 class="post-title"><%= @category.title %></h2>
+				</div>
+				<br/>
+				<%= render partial: 'pictures/list', locals: { pictures: @pictures } %>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,38 @@
+.actions {
+	margin-left: 30px;
+	margin-right: 30px;
+	
+	a {
+		color: #2D89FF !important;
+		font-weight: bold;
+	}
+}
+
+.post {
+	.emph {
+		margin: 80px 0 40px 0;
+		h3 {
+			font-weight: 400;
+		}
+	}
+	
+
+}
+
+.section-block {
+	.padding-top {
+		padding-top: 40px;
+	}
+	
+	.title {
+		font-weight: 300;
+		margin-bottom: 50px;
+		font-size: 2rem;
+	}
+}
+
+.post-finished-indicator {
+	height: 10px !important;
+	width: 100% !important;
+	background-color: #F3F3F3;
+}
