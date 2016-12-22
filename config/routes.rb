@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   root 'application#index'
   
   get '/fotografias/:id(/:name)', to: 'pictures#show', as: 'picture'
+  get '/tags/week-top-10', to: redirect('/las-diez-de-la-semana')
   get '/tags/:slug', to: 'tags#show', as: 'tag'
+  get '/las-diez-de-la-semana', to: 'popular#index', as: 'weekly_ten'
 end

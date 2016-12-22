@@ -25,25 +25,25 @@
 				
 				<article class="post no-margin-bottom">
 					<div class="post-content center">
-						<h2 class="post-title"><%= @picture.title %></h2>
+						<h2 class="post-title"><%= @spot_picture.title %></h2>
 						<div class="post-info actions">
-							<span>Foto de <b><%= @picture.year %></b></span>/
+							<span>Foto de <b><%= @spot_picture.year %></b></span>/
 							<span class="post-date">Posteada por <a href="#">Pedro</a></span>/
-							<span class="post-autor">Hace <%= distance_of_time_in_words_to_now(@picture.created_at) %></span>
+							<span class="post-autor">Hace <%= distance_of_time_in_words_to_now(@spot_picture.created_at) %></span>
 						</div>
 					</div>
 					<br/>
 					<div class="post-content center">
 						<div class="row">
 							<div class="column width-10 offset-1">
-								<p><%= @picture.description.html_safe %></p>
+								<p><%= @spot_picture.description.html_safe %></p>
 							</div>
 						</div>
 					</div>
 					<div class="post-media center">
 						<div class="thumbnail">
-							<a class="overlay-link lightbox-link" href="<%= @picture.url %>">
-								<%= image_tag(@picture.url) %>
+							<a class="overlay-link lightbox-link" href="<%= @spot_picture.url %>">
+								<%= image_tag(@spot_picture.url) %>
 							</a>
 						</div>
 					</div>
@@ -55,7 +55,7 @@
 							<a href="#accordion-2-panel-1"><span class="icon-plus"></span>Ver Mapa</a>
 							<div id="accordion-2-panel-1" class="" style="height: 0px;">
 								<div class="accordion-content">
-									<div class="map-container" data-coordinates="[<%= @picture.location %>]" data-icon='"/assets/map-marker.png"' data-zoom-level="15" data-style="color">
+									<div class="map-container" data-coordinates="[<%= @spot_picture.location %>]" data-icon='"/assets/map-marker.png"' data-zoom-level="15" data-style="color">
 										<div class="map-canvas" id="map-canvas-1"></div>
 									</div>
 								</div>
@@ -68,7 +68,7 @@
 					<div class="row">
 						<div class="column width-12">
 							<div class="actions">
-								<b>TAGS: </b><%= tags_for(@picture) %>
+								<b>TAGS: </b><%= tags_for(@spot_picture) %>
 							</div>
 						</div>
 					</div>
@@ -80,8 +80,10 @@
 	</div>
 	<hr class="post-finished-indicator" />
 	<!-- About Intro End -->
-	<%= render partial: 'shared/related_picture', locals: { title: "Este lugar en otros tiempos" } %>
-	<%= render partial: 'shared/related_picture', locals: { title: "Lugares cercanos" } %>
+	<%= render partial: 'related_pictures', 
+						  locals: { title: "Este lugar en otros tiempos", pictures: @more_pictures_in_another_time } %>
+	<%= render partial: 'related_pictures', 
+							locals: { title: "Lugares cercanos", pictures: @spot_pictures_nearby } %>
 	
 </div>
 

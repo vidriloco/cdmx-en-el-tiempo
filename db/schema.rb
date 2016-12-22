@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161126204851) do
+ActiveRecord::Schema.define(version: 20161221222827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,14 @@ ActiveRecord::Schema.define(version: 20161126204851) do
     t.string   "slug"
   end
 
+  create_table "picture_in_sections", force: :cascade do |t|
+    t.integer  "picture_id"
+    t.text     "sections",   default: [],              array: true
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.index ["sections"], name: "index_picture_in_sections_on_sections", using: :gin
+  end
+
   create_table "pictures", force: :cascade do |t|
     t.string   "title"
     t.integer  "year"
@@ -46,6 +54,7 @@ ActiveRecord::Schema.define(version: 20161126204851) do
     t.datetime "updated_at",                  null: false
     t.string   "disposition_on_landing_page"
     t.string   "published"
+    t.text     "list_of_tags"
   end
 
   create_table "promoted_categories", force: :cascade do |t|

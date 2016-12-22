@@ -1,0 +1,33 @@
+<% unless pictures.empty? %>
+	<div class="section-block team-2 pt-110 pb-50 no-padding-top">
+		<div class="row">
+			<div class="column width-10 offset-1 content-inner blog-regular">
+				<% unless title.blank? %>
+					<h3 class="title padding-top center"><%= title %></h3>
+				<% end %>
+				<% pictures.each_slice(2) do |pair| %>
+					<div class="row content-grid-2">
+						<% pair.each do |picture| %>
+							<div class="grid-item">
+								<div class="thumbnail no-margin-bottom" data-hover-easing="easeInOut" data-hover-speed="500" data-hover-bkg-color="#ffffff" data-hover-bkg-opacity="0.9">
+									<a href="<%= picture_path(picture.id, picture.title.parameterize) %>">
+										<img src="<%= picture.url %>" alt="" style="transition-duration: 500ms;" height="500" width="760">
+									</a>
+								</div>
+								<div class="team-content-info">
+									<h4 class="mb-5">
+										<a href="<%= picture_path(picture.id, picture.title.parameterize) %>">
+											<%= picture.title %>
+										</a>
+									</h4>
+									<h4 class="occupation"><%= picture.year %></h4>
+									<p><%= picture.description.html_safe %></p>
+								</div>
+							</div>
+						<% end %>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+<% end %>
