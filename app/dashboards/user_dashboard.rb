@@ -12,9 +12,12 @@ class UserDashboard < Administrate::BaseDashboard
     articles: Field::HasMany,
     id: Field::Number,
     email: Field::String,
+    name: Field::String,
     encrypted_password: Field::String,
     reset_password_token: Field::String,
     reset_password_sent_at: Field::DateTime,
+    password: Field::String,
+    password_confirmation: Field::String,
     remember_created_at: Field::DateTime,
     sign_in_count: Field::Number,
     current_sign_in_at: Field::DateTime,
@@ -43,16 +46,8 @@ class UserDashboard < Administrate::BaseDashboard
     :pictures,
     :articles,
     :id,
+    :name,
     :email,
-    :encrypted_password,
-    :reset_password_token,
-    :reset_password_sent_at,
-    :remember_created_at,
-    :sign_in_count,
-    :current_sign_in_at,
-    :last_sign_in_at,
-    :current_sign_in_ip,
-    :last_sign_in_ip,
     :created_at,
     :updated_at,
   ].freeze
@@ -61,18 +56,10 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :pictures,
-    :articles,
+    :name,
     :email,
-    :encrypted_password,
-    :reset_password_token,
-    :reset_password_sent_at,
-    :remember_created_at,
-    :sign_in_count,
-    :current_sign_in_at,
-    :last_sign_in_at,
-    :current_sign_in_ip,
-    :last_sign_in_ip,
+    :password,
+    :password_confirmation
   ].freeze
 
   # Overwrite this method to customize how users are displayed

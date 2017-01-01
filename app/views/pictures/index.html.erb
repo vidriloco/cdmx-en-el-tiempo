@@ -25,20 +25,17 @@
 				
 				<article class="post no-margin-bottom">
 					<div class="post-content center">
-						<h2 class="post-title">Las 10 de la semana</h2>
+						<h2 class="post-title">Nuestra colección</h2>
 						<div class="post-info actions">
-							<p>Nuestra selección semanal de las fotografías más populares</p>
+							<p>Aquí puedes conocer y explorar nuestro acervo</p>
 						</div>
 						<br/>
 					</div>
 				</article>
-				
-				
+			
 			</div>
 		
 		</div>
 	</div>
-	<%= render partial: 'pictures/related_pictures', 
-						  locals: { title: "", pictures: @pictures } %>
-	
+	<%= render partial: 'pictures/list', locals: { pictures: @pictures } %>
 </div>

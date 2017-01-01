@@ -1,0 +1,29 @@
+<%= render 'shared/header_opaque' %>
+
+<div class="content clearfix">
+	<div class="section-block replicable-content">
+		<div class="row flex">
+			<div class="column width-12">
+
+				<h2>Iniciar sesión</h2>
+
+				<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+				  <div class="field">
+				    <%= f.label :email, "Tu e-mail" %>
+				    <%= f.email_field :email, autofocus: true %>
+				  </div>
+
+				  <div class="field">
+				    <%= f.label :password, "Tu contraseña" %>
+				    <%= f.password_field :password, autocomplete: "off" %>
+				  </div>
+
+		    	<%= f.submit "Iniciar" %>
+				 
+				<% end %>
+
+			</div>
+		</div>
+	</div>
+	
+</div>

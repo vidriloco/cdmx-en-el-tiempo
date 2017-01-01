@@ -6,4 +6,8 @@ class PicturesController < ApplicationController
     @spot_pictures_nearby = Picture.find_nearby(@spot_picture, 3000, 4)
   end
   
+  def index
+    @pictures = Picture.all.order('created_at ASC')
+  end
+  
 end

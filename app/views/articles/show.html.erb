@@ -1,0 +1,51 @@
+<%= render 'shared/header_opaque' %>
+<!-- Content -->
+<div class="content clearfix">
+	<!-- Intro Title Section 2 -->
+	<div class="section-block intro-title-2" style="background-image: url('<%=  @article.image_url %>')">
+		<div class="row">
+			<div class="column width-12">
+				<div class="title-container">
+					<div class="title-container-inner center color-white">
+						<h1 class="inline no-margin-bottom"><%= @article.title %></h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Intro Title Section 2 End -->
+
+	<!-- Feature Column Section -->
+	<div class="section-block replicable-content">
+		<div class="row flex">
+			<div class="column width-12 center">
+				<p class="lead text-medium mb-110"><%= @article.content.html_safe %></p>
+			</div>
+		</div>
+		
+		<div class="post-content center">
+			<div class="post-info actions">
+				<span class="post-date">Artículo por <a href="#">Pedro</a></span>/
+				<span class="post-autor">Hace <%= distance_of_time_in_words_to_now(@article.created_at) %></span>
+			</div>
+		</div>
+	</div>
+	
+	<div class="column width-10 offset-1 content-inner blog-regular">
+		<div class="post-info boxed">
+			<div class="row">
+				<div class="column width-6">
+					<div class="actions">
+						<%= link_to "<span class='icon-left-open-mini'></span> Atrás".html_safe, :back %>
+					</div>
+				</div>
+				<div class="column width-6">
+					<div class="actions pull-right">
+						<span>COMPARTIR EN: </span> <%= link_to "Twitter".html_safe, :back %>&nbsp;&nbsp;
+						<%= link_to "Facebook".html_safe, :back, class: 'main-action' %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,15 +1,15 @@
-<li class="current">
+<li class="<%= (current_route == root_path ? "current" : "") %>">
 	<%= link_to 'Inicio', root_path %>
 </li>
-<li>
+
+<li class="<%= (current_route == pictures_path ? "current" : "") %>">
+	<%= link_to 'Explora nuestra colección', pictures_path %>
+</li>
+
+<li class="<%= (current_route == weekly_ten_path ? "current" : "") %>">
 	<%= link_to 'Las 10 de la semana', weekly_ten_path %>
 </li>
-<li class="contains-mega-sub-menu">
-	<%= link_to 'Colonias', root_path %>	
-</li>
-<li>
-	<%= link_to 'Artículos', root_path %>
-</li>
-<li class="sub-menu-right">
-	<%= link_to 'Mapa', root_path %>
+
+<li class="<%= (current_route == articles_path ? "current" : "") %>">
+	<%= link_to 'Artículos', articles_path %>
 </li>

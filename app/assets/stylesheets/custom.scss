@@ -36,3 +36,13 @@
 	width: 100% !important;
 	background-color: #F3F3F3;
 }
+
+.header-background {
+	.white-logo {
+		display: none;
+	}
+	
+	.gray-logo {
+		display: block;
+	}
+}

@@ -25,20 +25,20 @@
 				
 				<article class="post no-margin-bottom">
 					<div class="post-content center">
-						<h2 class="post-title">Las 10 de la semana</h2>
+						<h2 class="post-title">Artículos</h2>
 						<div class="post-info actions">
-							<p>Nuestra selección semanal de las fotografías más populares</p>
+							<p>Nuestras colaboraciones a diferentes medios impresos en temas del pasado de la ciudad</p>
 						</div>
 						<br/>
 					</div>
 				</article>
-				
-				
+							
 			</div>
-		
 		</div>
 	</div>
-	<%= render partial: 'pictures/related_pictures', 
-						  locals: { title: "", pictures: @pictures } %>
+	
+	<% @articles.each do |article| %>
+		<%= render partial: 'articles/article', locals: { article: article, title: "Publicado hace #{distance_of_time_in_words_to_now(article.created_at)}" } %>
+	<% end %>
 	
 </div>

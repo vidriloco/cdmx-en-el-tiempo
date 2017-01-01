@@ -13,7 +13,9 @@ class ArticleDashboard < Administrate::BaseDashboard
     user: Field::BelongsTo,
     id: Field::Number,
     title: Field::String,
-    content: Field::Text,
+    content: EnrichedTextField,
+    excerpt: EnrichedTextField,
+    image_url: Field::String,
     reference_url: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -25,7 +27,8 @@ class ArticleDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :tags,
+    :excerpt,
+    :image_url,
     :categories,
     :user,
     :id,
@@ -34,12 +37,13 @@ class ArticleDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :tags,
     :categories,
     :user,
     :id,
     :title,
     :content,
+    :excerpt,
+    :image_url,
     :reference_url,
     :created_at,
     :updated_at,
@@ -49,11 +53,12 @@ class ArticleDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :tags,
     :categories,
     :user,
     :title,
+    :excerpt,
     :content,
+    :image_url,
     :reference_url,
   ].freeze
 
