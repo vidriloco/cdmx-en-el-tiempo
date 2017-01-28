@@ -28,7 +28,9 @@
 						<h2 class="post-title"><%= @spot_picture.title %></h2>
 						<div class="post-info actions">
 							<span>Foto de <b><%= @spot_picture.year %></b></span>/
-							<span class="post-date">Posteada por <a href="#">Pedro</a></span>/
+							<% if @spot_picture.has_owner? %>
+								<span class="post-date">Posteada por <a href="#"><%= @spot_picture.user.name %></a></span>/
+							<% end %>
 							<span class="post-autor">Hace <%= distance_of_time_in_words_to_now(@spot_picture.created_at) %></span>
 						</div>
 					</div>
@@ -51,8 +53,8 @@
 				
 				<div class="accordion style-2" data-toggle-icon="" data-toggle-multiple="">
 					<ul>
-						<li class="">
-							<a href="#accordion-2-panel-1"><span class="icon-plus"></span>Ver Mapa</a>
+						<li class="active">
+							<a href="#accordion-2-panel-1"><span class="icon-minus"></span>Ver Mapa</a>
 							<div id="accordion-2-panel-1" class="" style="height: 0px;">
 								<div class="accordion-content">
 									<div class="map-container" data-coordinates="[<%= @spot_picture.location %>]" data-icon='"/assets/map-marker.png"' data-zoom-level="15" data-style="color">

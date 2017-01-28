@@ -48,4 +48,8 @@ class Picture < ApplicationRecord
   def parameterized_category_list
     categories.map(&:title).map(&:parameterize).join(' ')
   end
+  
+  def has_owner?
+    !user.nil?
+  end
 end
