@@ -10,7 +10,7 @@ class PictureDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     tags: Field::HasMany,
     categories: Field::HasMany,
-    user: Field::BelongsTo,
+    user: Field::BelongsTo.with_options(namefield: 'gogo'),
     disposition_on_landing_page: Field::Select.with_options(collection: ['portraits', 'wide', 'grid-sizer portrait']),
     id: Field::Number,
     title: Field::String,
@@ -65,6 +65,8 @@ class PictureDashboard < Administrate::BaseDashboard
     :location,
     :url,
   ].freeze
+
+  Administrate::Engine.add_javascript "administrate-pictures"
 
   # Overwrite this method to customize how pictures are displayed
   # across all pages of the admin dashboard.
