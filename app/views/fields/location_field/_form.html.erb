@@ -2,7 +2,12 @@
   <%= f.label "Location" %>
 </div>
 <div class="field-unit__field">
-  <%= f.text_field 'location_lat', value: field.latitude, placeholder: "Latitude" %><br/>
-	<%= f.text_field 'location_lng', value: field.longitude , placeholder: "Longitude" %>
+	<hr/>
+	
+	<input id="searchTextField" type="text" size="50" placeholder="Search for a destination"><br/>
+	<div id="map" class="map"></div><br/>
+  <%= f.text_field 'location_lat', value: field.latitude, html: { placeholder: "Latitude", disabled: true } %><br/>
+	<%= f.text_field 'location_lng', value: field.longitude , html: { placeholder: "Longitude", disabled: true } %>
+	<hr/>
+	
 </div>
-<div id="map"></div>

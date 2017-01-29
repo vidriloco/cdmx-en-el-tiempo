@@ -66,8 +66,6 @@ class PictureDashboard < Administrate::BaseDashboard
     :url,
   ].freeze
 
-  Administrate::Engine.add_javascript "administrate-pictures"
-
   # Overwrite this method to customize how pictures are displayed
   # across all pages of the admin dashboard.
   #

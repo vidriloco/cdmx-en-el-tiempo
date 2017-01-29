@@ -6,7 +6,13 @@
   <meta name="viewport" content="initial-scale=1" />
   <title><%= content_for(:title) %> | <%= Rails.application.class.parent_name.titlecase %></title>
   <%= render "stylesheet" %>
-	<script src="http://maps.googleapis.com/maps/api/js?v=3"></script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9lNNwKeP3BMJ3iM6uFlPaLWl6ZHlpH9k&libraries=places"></script>
+	
+	
+  <%= stylesheet_link_tag 'administrate' %>
+  <%= javascript_include_tag 'administrate' %>
 	
   <%= csrf_meta_tags %>
 </head>
