@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<%= render 'metatags/application' %>
-	<title>La Ciudad de México en el Tiempo</title>
+	<title><%= yield(:page_title) %></title>
 
 	<!-- Font -->
 	<link href='https://fonts.googleapis.com/css?family=Raleway:300,400,600%7CLato:300,400,700' rel='stylesheet' type='text/css'>
@@ -10,11 +9,17 @@
   <%= csrf_meta_tags %>
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
+	<%= render 'shared/javascripts' %>
+	
 	<!--[if lt IE 9]>
     	<script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
+  <%= yield :canonical_url %>
+  <%= yield :google_metatags %>
+  <%= yield :facebook_metatags %>
+  <%= yield :twitter_metatags %>
+  <%= yield :schema_microdata %>
+  <%= yield :extra_metatags %>
 </head>
 <body class="shop home-page">
 	<div class="wrapper reveal-side-navigation">

@@ -1,4 +1,6 @@
 <%= render 'shared/header_opaque' %>
+<%= render partial: 'shared/metatags', locals: { seo: @article } %>
+
 <!-- Content -->
 <div class="content clearfix">
 	<!-- Intro Title Section 2 -->
@@ -41,11 +43,14 @@
 				</div>
 				<div class="column width-6">
 					<div class="actions pull-right">
-						<span>COMPARTIR EN: </span> <%= link_to "Twitter".html_safe, :back %>&nbsp;&nbsp;
-						<%= link_to "Facebook".html_safe, :back, class: 'main-action' %>
+						<%= render partial: 'shared/share_buttons', locals: { sharable_object: @article } %>
 					</div>
 				</div>
 			</div>
+			
+			<div class="fb-comment-embed"
+			   data-href="<%= seo_for_url(@spot_picture) %>"
+			   data-width="500"></div>
 		</div>
 	</div>
 </div>

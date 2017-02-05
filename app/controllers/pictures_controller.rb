@@ -8,6 +8,7 @@ class PicturesController < ApplicationController
   
   def index
     @pictures = Picture.all.order('created_at ASC')
+    @seo = SeoForPage.find_for_page('pictures-index-page')
   end
   
 end

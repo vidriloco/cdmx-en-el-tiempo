@@ -5,5 +5,6 @@ class ArticlesController < ApplicationController
   
   def index
     @articles = Article.all.order('created_at DESC')
+    @seo = SeoForPage.find_for_page('articles-index-page')
   end
 end

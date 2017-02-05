@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class PictureDashboard < Administrate::BaseDashboard
+class SeoForPageDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,20 +8,15 @@ class PictureDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    tags: Field::HasMany,
-    categories: Field::HasMany,
-    user: Field::BelongsTo,
-    disposition_on_landing_page: Field::Select.with_options(collection: ['portraits', 'wide', 'grid-sizer portrait']),
     id: Field::Number,
+    page_identifier: Field::Select.with_options(collection: ['main-page', 'articles-index-page', 'popular-index-page', 'pictures-index-page']),
     title: Field::String,
-    year: Field::Number,
-    photo_taken_date: Field::DateTime,
     description: Field::Text,
-    location: LocationField,
+    keywords: Field::String,
+    image_url: Field::String,
     url: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    list_of_tags: Field::String
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -31,21 +26,20 @@ class PictureDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :id,
+    :page_identifier,
     :title,
-    :list_of_tags
+    :description,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :title,
-    :list_of_tags,
-    :user,
     :id,
-    :year,
-    :photo_taken_date,
+    :page_identifier,
+    :title,
     :description,
-    :location,
+    :keywords,
+    :image_url,
     :url,
     :created_at,
     :updated_at,
@@ -55,21 +49,18 @@ class PictureDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :categories,
-    :user,
-    :disposition_on_landing_page,
+    :page_identifier,
     :title,
-    :year,
-    :photo_taken_date,
     :description,
-    :location,
+    :keywords,
+    :image_url,
     :url,
   ].freeze
 
-  # Overwrite this method to customize how pictures are displayed
+  # Overwrite this method to customize how seo for pages are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(picture)
-    picture.title
-  end
+  # def display_resource(seo_for_page)
+  #   "SeoForPage ##{seo_for_page.id}"
+  # end
 end

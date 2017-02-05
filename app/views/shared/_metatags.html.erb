@@ -1,0 +1,35 @@
+<% unless seo.nil? %>
+	<% content_for(:page_title) { seo_for_title(seo) } %>
+
+	<!-- Canonical URL -->
+	<% content_for(:canonical_url) do %>
+	  <link rel="canonical" href="<%= seo_for_url(seo) %>" />
+	<% end %>
+
+	<% content_for :google_metatags do %>
+	  <!-- Google metatags -->
+	  <meta name="google" value="notranslate">
+	  <meta name="title" content="<%= seo_for_title(seo) %>">
+	  <meta name="description" content="<%= seo_for_description(seo) %>">
+	  <meta name="keywords" content="<%= seo_for_keywords(seo) %>">
+	<% end %>
+
+	<% content_for :facebook_metatags do %>
+	  <!-- Facebook metatags -->
+	  <meta property="og:title" content="<%= seo_for_title(seo) %>">
+	  <meta property="og:type" content="website">
+	  <meta property="og:image" content="<%= seo_for_image_url(seo) %>">
+	  <meta property="og:url" content="<%= seo_for_url(seo) %>">
+	  <meta property="og:description" content="<%= seo_for_description(seo) %>">
+	<% end %>
+
+	<% content_for :twitter_metatags do %>
+	  <!-- Twitter metatags -->
+	  <meta name="twitter:card" content="photo" />
+	  <meta name="twitter:site" content="@cdmexeneltiempo" />
+	  <meta name="twitter:description" content="<%= seo_for_description(seo) %>">
+	  <meta name="twitter:title" content="<%= seo_for_title(seo) %>" />
+	  <meta name="twitter:image" content="<%= seo_for_image_url(seo) %>" />
+	  <meta name="twitter:url" content="<%= seo_for_url(seo) %>" />
+	<% end %>
+<% end %>

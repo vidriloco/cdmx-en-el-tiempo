@@ -12,4 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require timber.master.min
+
+$('#share-fb').on('click', function() {
+	FB.ui({
+	    method: 'share',
+	    display: 'popup',
+	    href: $(this).attr('data-url'),
+	  }, function(response){});
+});

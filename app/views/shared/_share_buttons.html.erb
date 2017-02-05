@@ -1,0 +1,2 @@
+<span>COMPARTIR EN: </span> <a href="https://twitter.com/share?u=<%= seo_for_url(sharable_object) %>" target="_blank">Twitter</a>&nbsp;&nbsp;
+<%= link_to "Facebook".html_safe, 'javascript:void(0)', class: 'main-action', id: 'share-fb', 'data-url' => seo_for_url(sharable_object) %>

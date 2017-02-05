@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   end
     
   def index
+    @seo = SeoForPage.find_for_page('main-page')
     @article = Article.first
     @categories = PromotedCategory.on_landing_page
     @pictures = Picture.all_pictures_with(@categories)

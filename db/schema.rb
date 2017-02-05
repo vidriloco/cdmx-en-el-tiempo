@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161230221930) do
+ActiveRecord::Schema.define(version: 20170131202654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,17 @@ ActiveRecord::Schema.define(version: 20161230221930) do
     t.boolean  "visible"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "seo_for_pages", force: :cascade do |t|
+    t.string   "page_identifier"
+    t.string   "title"
+    t.text     "description"
+    t.string   "keywords"
+    t.string   "image_url"
+    t.string   "url"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "tags", force: :cascade do |t|

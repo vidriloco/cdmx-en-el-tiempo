@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :articles
     resources :users
     resources :promoted_categories
+    resources :seo_for_pages
     root to: "pictures#index"
   end
 
