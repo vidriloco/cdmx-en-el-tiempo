@@ -17,7 +17,7 @@ class Picture < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   
   def self.all_pictures_with(categories)
-    Picture.joins(:categories).select('title', 'year', 'url', 'created_at', 'disposition_on_landing_page').select(:id).distinct.where('categories.id' => categories.map(&:category_id)).order('pictures.created_at ASC')
+    Picture.joins(:categories).select('title', 'year', 'created_at', 'disposition_on_landing_page').select(:id).distinct.where('categories.id' => categories.map(&:category_id)).order('pictures.created_at ASC')
   end
   
   def self.find_in_another_time(picture, results)
