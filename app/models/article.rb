@@ -7,7 +7,7 @@ class Article < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   
   def image_url
-    image.url
+    return image.url unless image.blank?
   end
   
   def parameterized_category_list
