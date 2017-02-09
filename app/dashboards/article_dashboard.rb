@@ -15,7 +15,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     title: Field::String,
     content: EnrichedTextField,
     excerpt: EnrichedTextField,
-    image_url: Field::String,
+    image: PaperclipField,
     reference_url: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -28,7 +28,7 @@ class ArticleDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :excerpt,
-    :image_url,
+    :image,
     :categories,
     :user,
     :id,
@@ -43,7 +43,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     :title,
     :content,
     :excerpt,
-    :image_url,
+    :image,
     :reference_url,
     :created_at,
     :updated_at,
@@ -58,7 +58,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     :title,
     :excerpt,
     :content,
-    :image_url,
+    :image,
     :reference_url,
   ].freeze
 

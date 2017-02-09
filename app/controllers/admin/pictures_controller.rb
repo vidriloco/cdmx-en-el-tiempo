@@ -17,7 +17,7 @@ module Admin
     # for more information
     
     def permitted_attributes
-      [{:category_ids=>[]}, :user_id, :disposition_on_landing_page, :title, :year, :photo_taken_date, :description, :location_lat, :location_lng, :url]
+      [{:category_ids=>[]}, :user_id, :disposition_on_landing_page, :title, :year, :photo_taken_date, :description, :location_lat, :location_lng, :image]
     end
   end
 end

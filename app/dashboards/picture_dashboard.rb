@@ -18,7 +18,7 @@ class PictureDashboard < Administrate::BaseDashboard
     photo_taken_date: Field::DateTime,
     description: Field::Text,
     location: LocationField,
-    url: Field::String,
+    image: PaperclipField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     list_of_tags: Field::String
@@ -46,7 +46,7 @@ class PictureDashboard < Administrate::BaseDashboard
     :photo_taken_date,
     :description,
     :location,
-    :url,
+    :image,
     :created_at,
     :updated_at,
   ].freeze
@@ -63,7 +63,7 @@ class PictureDashboard < Administrate::BaseDashboard
     :photo_taken_date,
     :description,
     :location,
-    :url,
+    :image,
   ].freeze
 
   # Overwrite this method to customize how pictures are displayed

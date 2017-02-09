@@ -9,9 +9,13 @@ class Picture < ApplicationRecord
   
   before_validation :assign_location
   before_validation :assign_list_of_tags
-  
-  validates :location_lat, :location_lng, :title, :year, :url, presence: true
     
+  validates :location_lat, :location_lng, :title, :year, presence: true
+  validates :image, attachment_presence: true
+  
+  has_attached_file :image, default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+  
   def self.all_pictures_with(categories)
     Picture.joins(:categories).select('title', 'year', 'url', 'created_at', 'disposition_on_landing_page').select(:id).distinct.where('categories.id' => categories.map(&:category_id)).order('pictures.created_at ASC')
   end
@@ -51,5 +55,9 @@ class Picture < ApplicationRecord
   
   def has_owner?
     !user.nil?
+  end
+  
+  def url
+    image.url
   end
 end

@@ -1,0 +1,12 @@
+default: &default
+  region: "us-west-2"
+  endpoint: "s3-us-west-2.amazonaws.com"
+
+
+development:
+  <<: *default
+  bucket: "cdmxeneltiempo-devel"
+
+production:
+  <<: *default
+  bucket: "cdmxeneltiempo"

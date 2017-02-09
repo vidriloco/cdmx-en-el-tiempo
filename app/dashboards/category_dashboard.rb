@@ -14,7 +14,7 @@ class CategoryDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     description: Field::String,
-    kind: Field::String,
+    kind: Field::Select.with_options(collection: ['vecindario', 'transporte', 'sistema', 'general']),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze

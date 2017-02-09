@@ -5,6 +5,7 @@ class CreateArticles < ActiveRecord::Migration[5.0]
       t.text        :content
       t.integer     :user_id
       t.string      :reference_url
+      t.text        :excerpt
       t.timestamps
     end
   end
