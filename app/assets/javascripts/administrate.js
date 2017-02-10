@@ -1,7 +1,15 @@
 $(document).ready(function() {
 
-	var lat = parseFloat($('#picture_location_lat').attr('value'));
-	var lng = parseFloat($('#picture_location_lng').attr('value'));
+	var latRead = $('#picture_location_lat').attr('value');
+	var lngRead = $('#picture_location_lng').attr('value');
+	
+	var lat = 19.43;
+	var lng = -99.13;
+	
+	if((typeof latRead !== "undefined") && (typeof lngRead !== "undefined")) {
+		lat = parseFloat(latRead);
+		lng = parseFloat(lngRead);
+	}
 	
   var coordinate = {lat: lat, lng: lng};
 	var map = new google.maps.Map(document.getElementById('map'), {

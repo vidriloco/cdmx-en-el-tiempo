@@ -19,5 +19,5 @@ Rails.application.routes.draw do
   get '/las-diez-de-la-semana', to: 'popular#index', as: 'weekly_ten'
   get '/coleccion', to: 'pictures#index', as: 'pictures'
   get '/articulos', to: 'articles#index', as: 'articles'
-  get '/articulos/:id', to: 'articles#show', as: 'article'
+  get '/articulos/:id(/:name)', to: 'articles#show', as: 'article'
 end

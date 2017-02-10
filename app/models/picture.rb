@@ -17,7 +17,7 @@ class Picture < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   
   def self.all_pictures_with(categories)
-    Picture.joins(:categories).select('title', 'year', 'created_at', 'disposition_on_landing_page').select(:id).distinct.where('categories.id' => categories.map(&:category_id)).order('pictures.created_at ASC')
+    Picture.joins(:categories).select('title', 'year', 'image_file_name', 'image_content_type', 'image_file_size', 'image_updated_at', 'created_at', 'disposition_on_landing_page').select(:id).distinct.where('categories.id' => categories.map(&:category_id)).order('pictures.created_at ASC')
   end
   
   def self.find_in_another_time(picture, results)
@@ -42,7 +42,7 @@ class Picture < ApplicationRecord
   end
   
   def assign_location
-    self.location = [@location_lat, @location_lng] if !(@location_lat.nil? && @location_lng.nil?)
+    self.location = [@location_lat, @location_lng] if !(@location_lat.blank? && @location_lng.blank?)
   end
   
   def assign_list_of_tags
