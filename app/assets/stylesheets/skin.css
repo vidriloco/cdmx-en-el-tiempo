@@ -1859,7 +1859,7 @@ body,
 
 /* Hero */
 .hero-5-1 .media-column{
-	background-image: url(https://images.unsplash.com/photo-1468109320504-a5e48f17cfb7?dpr=1&auto=format&fit=crop&w=1500&h=929&q=80&cs=tinysrgb&crop=);
+	background-image: url(https://s3-us-west-2.amazonaws.com/cdmxeneltiempo-prod/pages/about-us.jpeg);
 }
 .hero-5-2 .media-column{
 	background-image: url(../images/team/hero-half-2.jpg);
