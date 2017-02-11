@@ -26,13 +26,7 @@
 				<article class="post no-margin-bottom">
 					<div class="post-content center">
 						<h2 class="post-title"><%= @spot_picture.title %></h2>
-						<div class="post-info actions">
-							<span>Foto de <b><%= @spot_picture.year %></b></span>/
-							<% if @spot_picture.has_owner? %>
-								<span class="post-date">Posteada por <a href="#"><%= @spot_picture.user.name %></a></span>/
-							<% end %>
-							<span class="post-autor">Hace <%= distance_of_time_in_words_to_now(@spot_picture.created_at) %></span>
-						</div>
+						<%= render partial: 'shared/ownership_details', locals: { resource_name: "Fotografía compartida", resource: @spot_picture } %>
 					</div>
 					<br/>
 					<div class="post-content center">

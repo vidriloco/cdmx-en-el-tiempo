@@ -10,6 +10,10 @@ class Article < ApplicationRecord
     return image.url unless image.blank?
   end
   
+  def has_owner?
+    !user.nil?
+  end
+  
   def parameterized_category_list
     categories.map(&:title).map(&:parameterize).join(' ')
   end

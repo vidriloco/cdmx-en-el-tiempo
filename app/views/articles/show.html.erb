@@ -21,14 +21,10 @@
 	<div class="section-block replicable-content">
 		<div class="row flex">
 			<div class="column width-12 center">
+				<div class="post-content center">
+					<%= render partial: 'shared/ownership_details', locals: { resource_name: "Artículo compartido", resource: @article } %>
+				</div>
 				<p class="lead text-medium mb-110"><%= @article.content.html_safe %></p>
-			</div>
-		</div>
-		
-		<div class="post-content center">
-			<div class="post-info actions">
-				<span class="post-date">Artículo por <a href="#">Pedro</a></span>/
-				<span class="post-autor">Hace <%= distance_of_time_in_words_to_now(@article.created_at) %></span>
 			</div>
 		</div>
 	</div>

@@ -14,6 +14,8 @@ Rails.application.configure do
       s3_region: file[Rails.env]["region"],
     }
   }
+  
+  config.i18n.default_locale = "es-MX"
 
 end
 

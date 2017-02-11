@@ -1,0 +1,6 @@
+<div class="post-info actions">
+	<span><%= resource_name %> <%= time_ago_in_words(resource.created_at) %></span>
+	<% if resource.has_owner? %>
+		/<span class="post-date">Por <a href="#"><%= resource.user.name %></a></span>
+	<% end %>
+</div>
