@@ -51,7 +51,7 @@
 							<a href="#accordion-2-panel-1"><span class="icon-minus"></span>Ver Mapa</a>
 							<div id="accordion-2-panel-1" class="" style="height: 0px;">
 								<div class="accordion-content">
-									<div class="map-container" data-coordinates="[<%= @spot_picture.location %>]" data-icon='"/assets/map-marker.png"' data-zoom-level="15" data-style="color">
+									<div class="map-container" data-coordinates="[<%= @spot_picture.location %>]" data-icon='"<%= asset_url('map-marker.png')%>"' data-zoom-level="15" data-style="color">
 										<div class="map-canvas" id="map-canvas-1"></div>
 									</div>
 								</div>
