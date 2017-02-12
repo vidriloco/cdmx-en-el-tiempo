@@ -68,7 +68,8 @@ class Picture < ApplicationRecord
       else
         image.url
       end
+    else
+      ""
     end
-    ""
   end
 end
