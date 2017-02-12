@@ -58,6 +58,10 @@ class Picture < ApplicationRecord
   end
   
   def url
-    image.url
+    image_url
+  end
+  
+  def image_url
+    return image.url unless image.blank?
   end
 end

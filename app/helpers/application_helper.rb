@@ -37,12 +37,6 @@ module ApplicationHelper
   end
   
   def seo_for_image_url(object)
-    if object.is_a? SeoForPage
-      object.image_url
-    elsif object.is_a? Article
-      object.reference_url
-    elsif object.is_a? Picture
-      object.url
-    end
+    object.image_url
   end
 end
