@@ -18,6 +18,6 @@ Rails.application.routes.draw do
   get '/tags/:slug', to: 'tags#show', as: 'tag'
   get '/las-diez-de-la-semana', to: 'popular#index', as: 'weekly_ten'
   get '/coleccion', to: 'pictures#index', as: 'pictures'
-  get '/articulos', to: 'articles#index', as: 'articles'
-  get '/articulos/:id(/:name)', to: 'articles#show', as: 'article'
+  get '/articulos-y-rutas', to: 'articles#index', as: 'articles'
+  get '/articulos-y-rutas/:id(/:name)', to: 'articles#show', as: 'article'
 end
