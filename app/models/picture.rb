@@ -62,6 +62,12 @@ class Picture < ApplicationRecord
   end
   
   def image_url
-    return image.url unless image.blank?
+    unless image.blank?
+      if image.url[0,2] == "//"
+        "http:#{image.url}"
+      else
+        image.url
+      end
+    end
   end
 end
