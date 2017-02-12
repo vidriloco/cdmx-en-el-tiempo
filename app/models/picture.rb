@@ -69,5 +69,6 @@ class Picture < ApplicationRecord
         image.url
       end
     end
+    ""
   end
 end
