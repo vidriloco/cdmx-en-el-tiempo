@@ -1,5 +1,4 @@
-<!-- Header -->
-<header class="header header-fixed header-fixed-on-mobile header-transparent" data-bkg-threshold="100">
+<header class="header header-fixed header-fixed-on-mobile header-transparent" data-bkg-threshold="1">
 	<div class="header-inner">
 		<div class="row nav-bar">
 			<div class="column width-12 nav-bar-inner">
@@ -10,6 +9,16 @@
 					</div>
 				</div>
 				<!-- Main Menu -->  
+				<nav class="navigation nav-block secondary-navigation nav-right">
+					<ul>
+						<!-- Aux Navigation -->
+						<li class="aux-navigation hide">
+							<a href="#" class="navigation-show side-nav-show nav-icon">
+								<span class="icon-menu"></span>
+							</a>
+						</li>
+					</ul>
+				</nav>
 				<nav class="navigation nav-block primary-navigation nav-right">
 					<ul>
 						<%= render 'shared/header-entries' %>
@@ -19,4 +28,3 @@
 		</div>
 	</div>
 </header>
-<!-- Header End -->

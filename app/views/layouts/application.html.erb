@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 	<title><%= yield(:page_title) %></title>
-
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0" name="viewport">
+	<meta name="twitter:widgets:theme" content="light">
 	<!-- Font -->
 	<link href='https://fonts.googleapis.com/css?family=Raleway:300,400,600%7CLato:300,400,700' rel='stylesheet' type='text/css'>
 	
@@ -24,6 +25,7 @@
   <%= yield :extra_metatags %>
 </head>
 <body class="shop home-page">
+	<%= render 'shared/side-navigation-menu' %>
 	<div class="wrapper reveal-side-navigation">
 		<div class="wrapper-inner">
 			<%= yield %>
