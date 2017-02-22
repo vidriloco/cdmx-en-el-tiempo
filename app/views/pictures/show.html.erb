@@ -60,6 +60,10 @@
 					</ul>
 				</div>
 				
+				<% unless @spot_picture.street_view_embed_url.nil? %>
+					<%= @spot_picture.street_view_embed_url.html_safe %>
+				<% end %>
+				
 				<div class="post-info boxed">
 					<div class="row">
 						<div class="column width-12">
