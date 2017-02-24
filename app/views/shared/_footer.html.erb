@@ -14,17 +14,20 @@
 							<%= link_to 'Nuestra colección', pictures_path %>
 						</li>
 						<li>
-							<%= link_to 'Las 10 de la semana', weekly_ten_path %>
+							<%= link_to 'Artículos y rutas', articles_path %>
 						</li>
+						<% if !true %>
+							<li>
+								<%= link_to 'Las 10 de la semana', weekly_ten_path %>
+							</li>
+						<% end %>
 					</ul>
 				</div>
 			</div>
 			<div class="column width-2">
 				<div class="widget">
 					<ul>
-						<li>
-							<%= link_to 'Artículos y rutas', articles_path %>
-						</li>
+						
 						<li>
 							<%= mail_to 'contacto@cdmxeneltiempo.com', 'Contáctanos' %>
 						</li>
