@@ -10,7 +10,7 @@ class Picture < ApplicationRecord
   before_validation :assign_location
   before_validation :assign_list_of_tags
     
-  validates :location_lat, :location_lng, :title, :year, presence: true
+  validates :location_lat, :location_lng, :title, presence: true
   validates :image, attachment_presence: true
   
   has_attached_file :image, default_url: "/images/:style/missing.png"

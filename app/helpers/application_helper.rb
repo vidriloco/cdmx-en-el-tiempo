@@ -12,6 +12,11 @@ module ApplicationHelper
     object.title
   end
   
+  def year_tag_for(year)
+    return nil if year.blank?
+    year
+  end
+  
   def seo_for_url(object)
     if object.is_a? SeoForPage
       object.url
