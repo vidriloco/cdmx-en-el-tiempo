@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require timber.master.min
+//= require social-share-button
 
 $('#share-fb').on('click', function() {
 	FB.ui({

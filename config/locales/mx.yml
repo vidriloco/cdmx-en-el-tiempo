@@ -1,4 +1,7 @@
 es-MX:
+  social_share_button:
+    share_to: "Compartir"
+    twitter: "Tweetear"
   activerecord:
     errors:
       messages:
