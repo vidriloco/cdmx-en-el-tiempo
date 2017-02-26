@@ -24,6 +24,11 @@
 				</div>
 				
 				<article class="post no-margin-bottom">
+					<div class="post-media center">
+						<div class="thumbnail">
+							<%= image_tag(@spot_picture.url) %>
+						</div>
+					</div>
 					<div class="post-content center">
 						<h2 class="post-title"><%= @spot_picture.title %></h2>
 						<%= render partial: 'shared/ownership_details', locals: { resource_name: "Fotografía compartida", resource: @spot_picture } %>
@@ -34,13 +39,6 @@
 							<div class="column width-10 offset-1">
 								<p><%= @spot_picture.description.html_safe %></p>
 							</div>
-						</div>
-					</div>
-					<div class="post-media center">
-						<div class="thumbnail">
-							<a class="overlay-link lightbox-link" href="<%= @spot_picture.url %>">
-								<%= image_tag(@spot_picture.url) %>
-							</a>
 						</div>
 					</div>
 				</article>
