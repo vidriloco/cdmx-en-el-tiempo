@@ -1,19 +1,22 @@
 <div class="section-block replicable-content">
 	<div class="row flex">
 		<div class="column width-8 push-2 center">
-			<p class="lead text-medium">Empieza redescubriendo la historia de la Ciudad de México con las fotografías más recientes que hemos añadido</p>
+			<p class="lead text-medium">Redescubre la historia de la Ciudad de México con fotografías y textos que hablan de su pasado.</p>
 		</div>
 	</div>
 </div>
-<div class="section-block grid-container fade-in-progressively full-width no-margins no-padding" data-layout-mode="masonry" data-grid-ratio="1" data-animate-filter-duration="700" data-set-dimensions data-animate-resize data-animate-resize-duration="0.8">
+<div class="section-block grid-container fade-in-progressively no-margins no-padding">
 	<div class="row">
+		<div class="column width-6 left">
+			<h3 class="mb-mobile-50">Las fotografías más recientes</h3>
+		</div>
 		<div class="column width-12">
-			<div class="row grid content-grid-4">
+			<div class="row grid content-grid-2">
 				<% @recent_pictures.each do |picture| %>
 					<div class="grid-item development large">
 						<div class="thumbnail img-scale-in" data-hover-easing="easeInOut" data-hover-speed="500" data-hover-bkg-color="#000000" data-hover-bkg-opacity="0.3">
 							<a href="<%= picture_path(picture.id, picture.title.parameterize) %>">
-								<div style="width: 100%; height: 100%; background-image: url('<%= picture.url %>'); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;"></div>
+								<div style="width: 100%; height: 500px; background-image: url('<%= picture.url %>'); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;"></div>
 								<span class="overlay-info">
 									<span>
 										<span>
@@ -35,7 +38,7 @@
 <div class="section-block">
 	<div class="row flex">
 		<div class="column width-8 push-2 center">
-			<p class="color-grey">¿Te quedaste con ganas de ver más? Visita nuestra sección con las fotografías que hemos publicado recientemente.</p>
+			<p class="color-grey">Continua viendo las fotografías más recientes en nuestra sección <i><b>Las más recientes</b></i> encontrarás las últimas fotografías de nuestra colección publicadas en este sitio.</p>
 			<a class="button medium bkg-theme bkg-hover-charcoal color-white color-hover-white text-uppercase" href="<%= recent_pictures_path %>">Ir a las más recientes</a>
 			<hr>
 		</div>
