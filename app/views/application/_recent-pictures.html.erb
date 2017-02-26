@@ -12,7 +12,7 @@
 				<% @recent_pictures.each do |picture| %>
 					<div class="grid-item development large">
 						<div class="thumbnail img-scale-in" data-hover-easing="easeInOut" data-hover-speed="500" data-hover-bkg-color="#000000" data-hover-bkg-opacity="0.3">
-							<a class="overlay-link lightbox-link" href="<%= picture_path(picture.id, picture.title.parameterize) %>">
+							<a href="<%= picture_path(picture.id, picture.title.parameterize) %>">
 								<div style="width: 100%; height: 100%; background-image: url('<%= picture.url %>'); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;"></div>
 								<span class="overlay-info">
 									<span>
