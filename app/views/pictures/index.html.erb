@@ -35,12 +35,17 @@
 		</div>
 	</div>
 	<%= render partial: 'pictures/list', locals: { pictures: @pictures } %>
-	<div class="section-block no-padding no-margin">
-		<div class="row flex">
-			<div class="column width-8 push-2 center">
-				<hr/>
-				<p class="color-grey">Te recomendamos echarle un vistazo a los artículos que iremos publicando en este sitio y que hablan sobre la historia de nuestra bella ciudad.</p>
-				<a class="button medium bkg-theme bkg-hover-charcoal color-white color-hover-white text-uppercase" href="<%= articles_path %>">Ir a articulos y rutas</a>
+	<div class="section-block hero-3 hero-3-1" style="background-image: url(https://s3-us-west-2.amazonaws.com/cdmxeneltiempo-prod/pages/principal.jpg)">
+		<div>
+			<div class="row">
+				<div class="column width-6 horizon" data-animate-in="preset:slideInLeftShort;duration:1000ms;delay:200ms;" data-threshold="0.5">
+					<div class="hero-content">
+						<div class="hero-content-inner left">
+							<p class="lead">Te recomendamos echarle un vistazo a los artículos que iremos publicando en este sitio y que hablan sobre la historia de nuestra ciudad.</p>
+							<a href="<%= articles_path %>" class="button medium bkg-theme color-white bkg-hover-theme color-hover-white">Ir a articulos y rutas</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
