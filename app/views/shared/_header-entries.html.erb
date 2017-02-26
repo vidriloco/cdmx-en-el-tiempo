@@ -6,11 +6,9 @@
 	<%= link_to 'Nuestra colección', pictures_path %>
 </li>
 
-<%if !true %>
-<li class="<%= (current_route == weekly_ten_path ? "current" : "") %>">
-	<%= link_to 'Las 10 de la semana', weekly_ten_path %>
+<li class="<%= (current_route == recent_pictures_path ? "current" : "") %>">
+	<%= link_to 'Las más recientes', recent_pictures_path %>
 </li>
-<% end %>
 
 <li class="<%= (current_route == articles_path ? "current" : "") %>">
 	<%= link_to 'Artículos y rutas', articles_path %>

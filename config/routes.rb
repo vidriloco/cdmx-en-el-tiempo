@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get '/fotografias/:id(/:name)', to: 'pictures#show', as: 'picture'
   get '/tags/week-top-10', to: redirect('/las-diez-de-la-semana')
   get '/tags/:slug', to: 'tags#show', as: 'tag'
-  get '/las-diez-de-la-semana', to: 'popular#index', as: 'weekly_ten'
+  get '/las-mas-recientes', to: 'popular#index', as: 'recent_pictures'
   get '/coleccion', to: 'pictures#index', as: 'pictures'
   get '/articulos-y-rutas', to: 'articles#index', as: 'articles'
   get '/articulos-y-rutas/:id(/:name)', to: 'articles#show', as: 'article'

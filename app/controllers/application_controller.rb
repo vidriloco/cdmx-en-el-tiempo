@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
     @article = Article.first
     @categories = PromotedCategory.on_landing_page
     @pictures = Picture.all_pictures_with(@categories)
+    @recent_pictures = Picture.last(6)
     @selected_pictures = ['https://s3-us-west-2.amazonaws.com/cdmxeneltiempo-prod/pages/principal.jpg', 'https://s3-us-west-2.amazonaws.com/cdmxeneltiempo-prod/pages/3.jpg']
   end
 end

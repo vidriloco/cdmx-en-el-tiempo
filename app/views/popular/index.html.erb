@@ -16,18 +16,16 @@
 							</div>
 						</div>
 						<div class="column width-6">
-							<div class="actions pull-right">
-								<%= render partial: 'shared/share_buttons', locals: { sharable_object: @seo } %>
-							</div>
+							
 						</div>
 					</div>
 				</div>
 				
 				<article class="post no-margin-bottom">
 					<div class="post-content center">
-						<h2 class="post-title">Las 10 de la semana</h2>
+						<h2 class="post-title">Las más recientes</h2>
 						<div class="post-info actions">
-							<p>Nuestra selección semanal de las fotografías más populares</p>
+							<p>Las fotografías recién añadidas al sitio</p>
 						</div>
 						<br/>
 					</div>
@@ -40,5 +38,18 @@
 	</div>
 	<%= render partial: 'pictures/related_pictures', 
 						  locals: { title: "", pictures: @pictures } %>
-	
+	<div class="section-block hero-3 hero-3-1" style="background-image: url(https://s3-us-west-2.amazonaws.com/cdmxeneltiempo-prod/pages/principal.jpg)">
+		<div>
+			<div class="row">
+				<div class="column width-6 horizon" data-animate-in="preset:slideInLeftShort;duration:1000ms;delay:200ms;" data-threshold="0.5">
+					<div class="hero-content">
+						<div class="hero-content-inner left">
+							<p class="lead">Si quieres ver más fotografías de la ciudad, te sugerimos darle un vistazo a <i><b>nuestra colección</b></i>, sección que irá creciendo cada semana.</p>
+							<a href="<%= pictures_path %>" class="button medium bkg-theme color-white bkg-hover-theme color-hover-white">Ir a nuestra colección</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

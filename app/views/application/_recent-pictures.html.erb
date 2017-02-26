@@ -1,0 +1,43 @@
+<div class="section-block replicable-content">
+	<div class="row flex">
+		<div class="column width-8 push-2 center">
+			<p class="lead text-medium">Empieza redescubriendo la historia de la Ciudad de México con las fotografías más recientes que hemos añadido</p>
+		</div>
+	</div>
+</div>
+<div class="section-block grid-container fade-in-progressively full-width no-margins no-padding" data-layout-mode="masonry" data-grid-ratio="1" data-animate-filter-duration="700" data-set-dimensions data-animate-resize data-animate-resize-duration="0.8">
+	<div class="row">
+		<div class="column width-12">
+			<div class="row grid content-grid-4">
+				<% @recent_pictures.each do |picture| %>
+					<div class="grid-item development large">
+						<div class="thumbnail img-scale-in" data-hover-easing="easeInOut" data-hover-speed="500" data-hover-bkg-color="#000000" data-hover-bkg-opacity="0.3">
+							<a class="overlay-link lightbox-link" href="<%= picture_path(picture.id, picture.title.parameterize) %>">
+								<img src="<%= picture.url %>" alt="">
+								<span class="overlay-info">
+									<span>
+										<span>
+											<span class="left inline">
+												<span class="project-title"><%= picture.title %></span>
+												<span class="project-description"><%= seo_for_keywords(picture) %></span>
+											</span>
+										</span>
+									</span>
+								</span>
+							</a>
+						</div>
+					</div>	
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="section-block">
+	<div class="row flex">
+		<div class="column width-8 push-2 center">
+			<p class="color-grey">¿Te quedaste con ganas de ver más? Visita nuestra sección con las fotografías que hemos publicado recientemente.</p>
+			<a class="button medium bkg-theme bkg-hover-charcoal color-white color-hover-white text-uppercase" href="<%= recent_pictures_path %>">Ir a las más recientes</a>
+			<hr>
+		</div>
+	</div>
+</div>
