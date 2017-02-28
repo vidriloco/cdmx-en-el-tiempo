@@ -8,20 +8,6 @@
 		<div class="row">
 			
 			<div class="column width-10 offset-1 content-inner blog-regular">
-				<div class="post-info boxed">
-					<div class="row">
-						<div class="column width-6">
-							<div class="actions">
-								<%= link_to "<span class='icon-left-open-mini'></span> Atrás".html_safe, root_path %>
-							</div>
-						</div>
-						<div class="column width-6">
-							<div class="actions pull-right">
-								<%= render partial: 'shared/share_buttons', locals: { sharable_object: @seo } %>
-							</div>
-						</div>
-					</div>
-				</div>
 				
 				<article class="post no-margin-bottom">
 					<div class="post-content center">
@@ -47,6 +33,22 @@
 							<p class="lead">Te recomendamos echarle un vistazo a los artículos que iremos publicando en este sitio y que hablan sobre la historia de nuestra ciudad.</p>
 							<a href="<%= articles_path %>" class="button medium bkg-theme color-white bkg-hover-theme color-hover-white">Ir a articulos y rutas</a>
 						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section-block clearfix no-padding no-margin mt-60">
+		<div class="post-info boxed">
+			<div class="row">
+				<div class="column width-6">
+					<div class="actions">
+						<%= link_to "".html_safe, root_path %>
+					</div>
+				</div>
+				<div class="column width-6">
+					<div class="actions pull-right">
+						<%= render partial: 'shared/share_buttons', locals: { sharable_object: @seo } %>
 					</div>
 				</div>
 			</div>
