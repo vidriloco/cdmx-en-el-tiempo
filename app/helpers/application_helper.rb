@@ -9,7 +9,7 @@ module ApplicationHelper
   end
   
   def seo_for_title(object)
-    object.title
+    object.title unless object.nil?
   end
   
   def year_tag_for(year)
@@ -42,6 +42,6 @@ module ApplicationHelper
   end
   
   def seo_for_image_url(object)
-    object.image_url
+    object.image_url unless object.nil?
   end
 end

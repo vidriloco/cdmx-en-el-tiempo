@@ -9,11 +9,26 @@
 	<!-- Recent pictures -->
 	<%= render 'recent-pictures' %>
 	
+	
+	<div class="section-block replicable-content no-padding-top mt-40">
+		<hr>
+		<div class="row flex mt-60">
+			<div class="column width-8 push-2 center">
+				<p class="lead text-medium">Un nuevo artículo sobre la historia de la ciudad cada semana</p>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Displaying the article of the month -->
+	<div class="no-margins no-padding">
+		<%= render partial: 'articles/article', locals: { article: @article, title: "Artículo de la semana" } %>
+	</div>
+	
 	<!-- Stand out topics -->
-	<div class="section-block grid-filter-menu right left-on-mobile no-margins no-padding-top">
+	<div class="section-block grid-filter-menu right left-on-mobile mt-70">
 		<div class="row no-padding">
 			<div class="column width-6 left">
-				<h3 class="mb-mobile-50">Fotografías por temas destacados</h3>
+				<h3 class="mb-mobile-50">Algunas fotografías por tema</h3>
 			</div>
 			<div class="column width-6">
 				<ul>
@@ -30,10 +45,7 @@
 		</div>
 	</div>
 	<%= render partial: 'pictures/list', locals: { pictures: @pictures } %>
-	<!-- Portfolio Grid End -->
-
-	<!-- Displaying the article of the month -->
-	<%= render partial: 'articles/article', locals: { article: @article, title: "Artículo de la semana" } %>
+	
 
 	<!-- Displaying our achievements -->
 	<%= render 'difusion' %>
