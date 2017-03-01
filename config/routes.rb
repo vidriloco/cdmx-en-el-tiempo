@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "/sitemap.xml" => "sitemap#index", :format => "xml", :as => :sitemap
+  
   devise_for :users
   namespace :admin do
     resources :pictures
@@ -19,7 +21,5 @@ Rails.application.routes.draw do
   get '/tags/:slug', to: 'tags#show', as: 'tag'
   get '/coleccion', to: 'pictures#index', as: 'pictures'
   get '/articulos-y-rutas', to: 'articles#index', as: 'articles'
-  get '/articulos-y-rutas/:id(/:name)', to: 'articles#show', as: 'article'
-  
-  get "/sitemap.xml" => "sitemap#index", :format => "xml", :as => :sitemap
+  get '/articulos-y-rutas/:id(/:name)', to: 'articles#show', as: 'article'  
 end

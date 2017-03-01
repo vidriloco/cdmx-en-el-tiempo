@@ -8,8 +8,6 @@
 		<div class="row">
 			
 			<div class="column width-9 content-inner blog-regular">
-
-				
 				<article class="post no-margin-bottom">
 					<div class="post-media center">
 						<div class="thumbnail">
@@ -62,6 +60,14 @@
 							<div class="column width-12">
 								<div class="actions center">
 									<p>Compartir en</p><%= render partial: 'shared/share_buttons', locals: { sharable_object: @spot_picture } %>
+								</div>
+							</div>
+						</div>
+						<hr/>
+						<div class="row">
+							<div class="column width-12">
+								<div class="actions center">
+									<%= link_to "<span class='icon-left-open-mini'></span> Atrás".html_safe, :back %>
 								</div>
 							</div>
 						</div>
