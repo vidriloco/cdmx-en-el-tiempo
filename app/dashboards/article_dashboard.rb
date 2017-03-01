@@ -14,6 +14,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     content: EnrichedTextField,
+    published: Field::Boolean,
     excerpt: EnrichedTextField,
     image: PaperclipField,
     reference_url: Field::String,
@@ -30,6 +31,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     :excerpt,
     :image,
     :categories,
+    :published,
     :user,
     :id,
   ].freeze
@@ -41,6 +43,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     :user,
     :id,
     :title,
+    :published,
     :content,
     :excerpt,
     :image,
@@ -55,6 +58,7 @@ class ArticleDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :categories,
     :user,
+    :published,
     :title,
     :excerpt,
     :content,

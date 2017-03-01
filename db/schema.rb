@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170221235025) do
+ActiveRecord::Schema.define(version: 20170301001300) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,14 +21,15 @@ ActiveRecord::Schema.define(version: 20170221235025) do
     t.text     "content"
     t.integer  "user_id"
     t.string   "reference_url"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.text     "excerpt"
     t.string   "image_url"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.boolean  "published",          default: true
   end
 
   create_table "categories", force: :cascade do |t|
@@ -56,16 +57,16 @@ ActiveRecord::Schema.define(version: 20170221235025) do
     t.integer  "user_id"
     t.point    "location"
     t.string   "url"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
     t.string   "disposition_on_landing_page"
-    t.string   "published"
     t.text     "list_of_tags"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.text     "street_view_embed_url"
+    t.boolean  "published",                   default: true
   end
 
   create_table "promoted_categories", force: :cascade do |t|

@@ -16,6 +16,10 @@ class Picture < ApplicationRecord
   has_attached_file :image, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   
+  def self.published
+    where(published: true)
+  end
+  
   def self.all_pictures_with(categories)
     Picture.joins(:categories).select('title', 'year', 'image_file_name', 'image_content_type', 'image_file_size', 'image_updated_at', 'created_at', 'disposition_on_landing_page').select(:id).distinct.where('categories.id' => categories.map(&:category_id)).order('pictures.created_at ASC')
   end

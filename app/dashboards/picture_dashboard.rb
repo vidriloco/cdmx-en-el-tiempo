@@ -17,6 +17,7 @@ class PictureDashboard < Administrate::BaseDashboard
     year: Field::Number,
     photo_taken_date: Field::DateTime,
     description: Field::Text,
+    published: Field::Boolean,
     location: LocationField,
     street_view_embed_url: Field::Text,
     image: PaperclipField,
@@ -44,6 +45,7 @@ class PictureDashboard < Administrate::BaseDashboard
     :user,
     :id,
     :year,
+    :published,
     :photo_taken_date,
     :description,
     :location,
@@ -59,6 +61,7 @@ class PictureDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :categories,
     :user,
+    :published,
     :disposition_on_landing_page,
     :street_view_embed_url,
     :title,
