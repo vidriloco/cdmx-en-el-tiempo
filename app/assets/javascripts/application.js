@@ -14,11 +14,6 @@
 //= require jquery_ujs
 //= require timber.master.min
 //= require social-share-button
-
-$('#share-fb').on('click', function() {
-	FB.ui({
-	    method: 'share',
-	    display: 'popup',
-	    href: $(this).attr('data-url'),
-	  }, function(response){});
-});
+//= require photoswipe
+//= require photoswipe-ui-default
+//= require picture-gallery
