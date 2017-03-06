@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     
   def index
     @seo = SeoForPage.find_for_page('main-page')
-    @article = Article.first
+    @article = Article.last
     @categories = PromotedCategory.on_landing_page
     @pictures = Picture.all_pictures_with(@categories)
     @recent_pictures = Picture.last(6)
