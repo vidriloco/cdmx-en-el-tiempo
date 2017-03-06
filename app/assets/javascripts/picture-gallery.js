@@ -182,6 +182,20 @@ $(document).ready(function() {
 
         // Pass data to PhotoSwipe and initialize it
         gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+				gallery.listen('imageLoadComplete', function (index, item) {
+				    var linkEl = item.el.children[0];
+
+				    if (!linkEl.getAttribute('data-size') || linkEl.getAttribute('data-size') == 'auto') {
+				        var img = new Image();
+				        img.src = linkEl.getAttribute('href');
+
+				        linkEl.setAttribute('data-size', img.naturalWidth + 'x' + img.naturalHeight);
+				        item.w = img.naturalWidth;
+				        item.h = img.naturalHeight;
+				        gallery.invalidateCurrItems();
+				        gallery.updateSize(true);
+				    }
+				});
         gallery.init();
     };
 

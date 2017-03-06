@@ -12,7 +12,7 @@
 					<div class="post-media center">
 						<div class="thumbnail gallery" itemscope itemtype="http://schema.org/ImageGallery">
 							<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-								<a href="<%= @spot_picture.url %>" itemprop="contentUrl" data-size="1024x1024">
+								<a href="<%= @spot_picture.url %>" itemprop="contentUrl" data-size="auto">
 									<%= image_tag(@spot_picture.url, itemprop: "thumbnail") %>
 								</a>
 							</figure>
