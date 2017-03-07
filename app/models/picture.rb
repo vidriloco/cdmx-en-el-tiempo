@@ -21,7 +21,7 @@ class Picture < ApplicationRecord
   end
   
   def self.all_pictures_with(categories)
-    Picture.joins(:categories).select('title', 'year', 'image_file_name', 'image_content_type', 'image_file_size', 'image_updated_at', 'created_at', 'disposition_on_landing_page').select(:id).distinct.where('categories.id' => categories.map(&:category_id)).order('pictures.created_at DESC')
+    Picture.order('pictures.created_at DESC').joins(:categories).select('title', 'year', 'image_file_name', 'image_content_type', 'image_file_size', 'image_updated_at', 'created_at', 'disposition_on_landing_page').select(:id).distinct.where('categories.id' => categories.map(&:category_id))
   end
   
   def self.find_in_another_time(picture, results)
