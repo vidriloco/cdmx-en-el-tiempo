@@ -7,7 +7,7 @@ class PicturesController < ApplicationController
   end
   
   def index
-    @pictures = Picture.published.order('created_at ASC')
+    @pictures = Picture.published.order('created_at DESC')
     @seo = SeoForPage.find_for_page('pictures-index-page')
   end
   
