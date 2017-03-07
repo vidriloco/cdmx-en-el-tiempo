@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<%= render 'shared/javascripts/adsense' %>
 	<title><%= yield(:page_title) %></title>
 	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0" name="viewport">
 	<meta name="twitter:widgets:theme" content="light">
@@ -11,7 +12,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?sensor=true&libraries=places&key=AIzaSyC9lNNwKeP3BMJ3iM6uFlPaLWl6ZHlpH9k&language=en"></script>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-	<%= render 'shared/javascripts' %>
+	<%= render 'shared/javascripts/analytics' %>
+	<%= render 'shared/javascripts/facebook' %>
   <%= javascript_include_tag 'application' %>
 	
 	<!--[if lt IE 9]>
